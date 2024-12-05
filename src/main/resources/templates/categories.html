@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Categories</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e3f2fd;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #3a5f3a;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            width: 350px;
+            margin: 30px auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #ffffff;
+        }
+        li {
+            background-color: #4CAF50;
+            margin: 5px 10px;
+            padding: 14px;
+            color: #ffffff;
+            text-align: center;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        li:hover {
+            background-color: #388e3c;
+            cursor: pointer;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+<h1>Categories</h1>
+<ul>
+    <li th:each="category : ${categories}" th:text="${category.name}"></li>
+</ul>
+</body>
+</html>

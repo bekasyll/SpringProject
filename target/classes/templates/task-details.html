@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Task Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e3f2fd;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #2e7d32;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .details {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #c8e6c9;
+            border-radius: 5px;
+            background: #e8f5e9;
+        }
+
+        .details p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .details strong {
+            color: #2e7d32;
+        }
+
+        a {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            color: #388e3c;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-btn {
+            display: block;
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #43a047;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Task Details</h1>
+    <div class="details">
+        <p><strong>Title:</strong> <span th:text="${task.title}"></span></p>
+        <p><strong>Description:</strong> <span th:text="${task.description}"></span></p>
+        <p><strong>Category:</strong> <span th:text="${task.category.name}"></span></p>
+        <p><strong>Deadline:</strong> <span th:text="${task.dueDate}"></span></p>
+        <p><strong>Priority:</strong> <span th:text="${task.priority}"></span></p>
+        <p><strong>Status:</strong> <span th:text="${task.status}"></span></p>
+    </div>
+    <a th:href="@{/home}" class="back-btn">Return to Home</a>
+</div>
+
+</body>
+</html>

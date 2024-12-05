@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e3f2fd;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 60px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #2e7d32;
+            margin-bottom: 20px;
+        }
+
+        .profile-info {
+            margin-bottom: 30px;
+        }
+
+        .profile-info p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .profile-info strong {
+            font-weight: bold;
+            color: #444;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 12px 20px;
+            background-color: #43a047;
+            color: white;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        a:hover {
+            background-color: #388e3c;
+            transform: scale(1.05);
+        }
+
+        .logout-button {
+            background-color: #e53935;
+        }
+
+        .logout-button:hover {
+            background-color: #c62828;
+            transform: scale(1.05);
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 480px) {
+            .button-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            a {
+                width: 100%;
+                padding: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>User Profile</h1>
+    <div class="profile-info">
+        <p><strong>Username:</strong> <span th:text="${user.username}"></span></p>
+        <p><strong>Email:</strong> <span th:text="${user.email}"></span></p>
+    </div>
+    <div class="button-group">
+        <a href="/home">Home</a>
+        <a href="/auth/login" class="logout-button">Logout</a>
+    </div>
+</div>
+</body>
+</html>
